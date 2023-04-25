@@ -1,25 +1,23 @@
 package io.anywr.tests.java_spring_security_test.controllers;
 
+import io.anywr.tests.java_spring_security_test.configurations.security.JwtTokenUtil;
+import io.anywr.tests.java_spring_security_test.dtos.auth.AuthContext;
+import io.anywr.tests.java_spring_security_test.dtos.auth.AuthPayload;
+import io.anywr.tests.java_spring_security_test.dtos.auth.SignUpPayload;
 import io.anywr.tests.java_spring_security_test.dtos.profile.UserDto;
 import io.anywr.tests.java_spring_security_test.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import io.anywr.tests.java_spring_security_test.configurations.security.JwtTokenUtil;
-import io.anywr.tests.java_spring_security_test.dtos.auth.AuthContext;
-import io.anywr.tests.java_spring_security_test.dtos.auth.AuthPayload;
-import io.anywr.tests.java_spring_security_test.dtos.auth.SignUpPayload;
-import io.anywr.tests.java_spring_security_test.models.User;
 
 import java.util.Date;
 
