@@ -1,0 +1,9 @@
+{
+    "properties": [
+        {
+            "name": "app.security.jwt.secret",
+            "type": "java.lang.String",
+            "description": "The secret key must be coupled with the header and payload to verify the unique hash."
+        }
+    ]
+}
