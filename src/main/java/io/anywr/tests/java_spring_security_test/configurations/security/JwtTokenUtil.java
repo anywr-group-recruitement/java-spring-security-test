@@ -27,7 +27,7 @@ public class JwtTokenUtil implements InitializingBean {
     private Key secretKey;
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
         // Create a signing key
         if (jwtSecret == null || jwtSecret.length() == 0) {
             secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS512);
@@ -51,6 +51,7 @@ public class JwtTokenUtil implements InitializingBean {
                 .getBody();
     }
 
+    @SuppressWarnings("unused")
     public <T> T getClaimFromToken(@NonNull String token, @NonNull Function<Claims, T> claimsResolver) throws JwtException {
         final Claims claims = getAllClaimsFromToken(token);
         return claimsResolver.apply(claims);
