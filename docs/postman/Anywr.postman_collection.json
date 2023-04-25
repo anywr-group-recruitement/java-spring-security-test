@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "cf5d3e01-ed41-4958-a4e2-313f983648e6",
+		"name": "Anywr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8524130",
+		"_collection_link": "https://bold-capsule-572527.postman.co/workspace/1e142587-cd56-4b7f-8846-0c53e3e70707/collection/8524130-cf5d3e01-ed41-4958-a4e2-313f983648e6?action=share&creator=8524130&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Spring test",
+			"item": [
+				{
+					"name": "[Auth] signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user1\",\n    \"password\": \"q9$8hRBL2k75vi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-server}}/api/auth/login",
+							"host": [
+								"{{base-server}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[Auth] signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user1\",\n    \"password\": \"q9$8hRBL2k75vi\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-server}}/api/auth/signup",
+							"host": [
+								"{{base-server}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User details",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const url = `${pm.collectionVariables.get('base-server')}/api/auth/login`;",
+									"pm.sendRequest({",
+									"    url: url,",
+									"    method: 'POST',",
+									"    header: { 'content-type': 'application/json' },",
+									"    body: {",
+									"        mode: 'raw',",
+									"        raw: {",
+									"            username: 'user1',",
+									"            password: 'q9$8hRBL2k75vi'",
+									"        }",
+									"    }",
+									"}, function (err, response) {",
+									"    pm.collectionVariables.set('token', response.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-server}}/api/users/me",
+							"host": [
+								"{{base-server}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base-server",
+			"value": "http://localhost:8081"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
