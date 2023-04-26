@@ -10,7 +10,7 @@ Feel free to use any resources you need while completing this test. Whether it's
 
 ## Exercice
 
-The main idea is to focus on authentication and authorization using Java Spring Boot as per the below :
+The main idea is to focus on authentication and authorization using Java Spring Boot and Postgresql DB as per the below :
 
 Create a RESTful API using Java Spring Boot that implements a user authentication and authorization system. The API should have the following features:
 
@@ -18,13 +18,9 @@ Create a RESTful API using Java Spring Boot that implements a user authenticatio
 - Allow users to log in by providing their username and password.
 - Allow users to retrieve their own profile information, such as their username and email address. (Optional if you have time)
 - Use JSON Web Tokens (JWT) to authenticate and authorize API requests.
+- User log in should be reading from application_user table
 
-In addition, the API should include the following:
-
-- Input validation to ensure that only valid data is entered into the database.
-- Unit tests to ensure that the authentication and authorization system functions correctly. (Optional if you have time)
-
-Create a database structure using Postgresql on the following business demands:
+Create a database structure on the following business demands:
 
 -	School management that contains students' structure
 -	Students are related to one class only
@@ -38,9 +34,9 @@ In addition, create a RESTful API with the following:
 
 -	Secure API after login using JWT generated token.
 -	Get the list of students with the following:
-o	Filters: Class Name and/or Teacher Full Name
-o	All Students list will be returned in case of no filters value
-o	Paginated
+    - Filters: Class Name and/or Teacher Full Name
+    - All Students list will be returned in case of no filters value
+    - Paginated
 -	Unit testing (Optional if you have time)
 
 ## Code delivery
