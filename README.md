@@ -10,7 +10,13 @@ Feel free to use any resources you need while completing this test. Whether it's
 
 ## Exercice
 
-The main idea is to focus on authentication and authorization using Java Spring Boot and Postgresql DB as per the below :
+The main idea is to focus on authentication and authorization using Java Spring Boot and Postgresql DB as per the below:
+
+Project name on github or gitlab repository should be as following firstName_LastName_GeneratedRandom:
+- FirstName: developer first name
+- LastName: developer last name
+- GeneratedRandom: provided by this link: Markup : [Generate Random](https://www.gigacalculator.com/randomizers/random-alphanumeric-generator.php) with following criteria:
+![image](https://user-images.githubusercontent.com/92299902/234573178-87e00eed-22d6-492c-8ebb-ebc08463bde3.png)
 
 Create a RESTful API using Java Spring Boot that implements a user authentication and authorization system. The API should have the following features:
 
