@@ -24,6 +24,25 @@ In addition, the API should include the following:
 - Input validation to ensure that only valid data is entered into the database.
 - Unit tests to ensure that the authentication and authorization system functions correctly. (Optional if you have time)
 
+Create a database structure using Postgresql on the following business demands:
+
+-	School management that contains students' structure
+-	Students are related to one class only
+-	Only one teacher per class
+-	The student should contain the following information: ID, First Name, Last Name
+-	The teacher should contain the following information: ID, First Name, Last Name
+-	The class should contain the following information: ID, name
+
+
+In addition, create a RESTful API with the following:
+
+-	Secure API after login using JWT generated token.
+-	Get the list of students with the following:
+o	Filters: Class Name and/or Teacher Full Name
+o	All Students list will be returned in case of no filters value
+o	Paginated
+-	Unit testing (Optional if you have time)
+
 ## Code delivery
 - Make sure to use GIT, and to commit your changes following Angular git commit conection https://www.conventionalcommits.org/en/v1.0.0-beta.4/
 - Push to your account on github
