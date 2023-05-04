@@ -17,18 +17,18 @@ N'hésitez pas à utiliser toutes les ressources dont vous avez besoin pour réu
 
 ## Exercice
 
-### Créez une structure de base de données en fonction des exigences commerciales suivantes.
+### Créez une structure de PostgreSQL base de données en fonction des exigences commerciales suivantes.
 
 - Gestion scolaire qui contient la structure des étudiants
 - Les étudiants sont liés à une seule classe
 - Un seul enseignant par classe
 - L'étudiant doit contenir les informations suivantes: ID, Prénom, Nom de famille
 - L'enseignant doit contenir les informations suivantes: ID, Prénom, Nom de famille
-- La classe doit contenir les informations suivantes: ID, nom
+- La classe doit contenir les informations suivantes: ID, nom (unique)
 
 ### De plus, créez une API RESTful en utilisant Java Spring Boot avec les éléments suivants :
 
-- Sécuriser l'API après la connexion en utilisant un jeton JWT généré.
+- Sécurisez l'API après la connexion à l'aide du jeton généré par JWT à l'aide de l'intercepteur et pour vérifier dans la table DB application_user qui contient les balises suivantes: "username" et "password".
 - Obtenir la liste des étudiants avec les éléments suivants :
   - Filtres : Nom de la classe et/ou Nom complet de l'enseignant
   - Tous les étudiants de la liste seront retournés en cas d'absence de valeur de filtres
