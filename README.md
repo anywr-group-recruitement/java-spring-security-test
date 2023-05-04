@@ -17,18 +17,18 @@ Feel free to use any resources you need while completing this test. Whether it's
 
 ## Exercice
 
-### Create a database structure on the following business demands:
+### Create a PostgreSQL database structure on the following business demands:
 
 -	School management that contains students' structure
 -	Students are related to one class only
 -	Only one teacher per class
 -	The student should contain the following information: ID, First Name, Last Name
 -	The teacher should contain the following information: ID, First Name, Last Name
--	The class should contain the following information: ID, name
+-	The class should contain the following information: ID, name (unique)
 
 ### In addition, Create a RESTful API using Java Spring Boot with the following:
 
--	Secure API after login using JWT generated token.
+-	Secure API after login using JWT generated token using interceptor and to check in the DB application_user table that contains username and password.
 -	Get the list of students with the following:
     - Filters: Class Name and/or Teacher Full Name
     - All Students list will be returned in case of no filters value
